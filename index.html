@@ -1,0 +1,380 @@
+<!DOCTYPE html><html><head></head><body onload="startLoop()" style="display:none;">
+
+  <title>Brew OS PRO</title>
+  <script src="app.js"></script>
+    <!--  Web App Manifest include  -->
+    <link rel="manifest" href="app.webmanifest">
+  <link rel="shortcut icon" type="image/png" href="images/LHBOS-icon.png">
+  <link href="css/clockstyle.css" rel="stylesheet" id="stylesheet" type="text/css">
+  <link href="css/appstyle.css" rel="stylesheet" id="stylesheet" type="text/css">
+	  <link href="css/island.css" rel="stylesheet" id="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" class="donotremove-ss">
+
+
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+  <script src="js/FirmwareUpdated.js"></script>
+    <script src="js/Prefrences/SystemGrabber.js"></script>
+	    <script src="js/PassLock.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+	  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<style>
+  body
+{
+  background:black;
+    text-align: center
+}
+.intro
+{
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+  </style>
+
+<button id="but" onclick="intro()">Enter</button>
+<video hidden class="intro" id="myVideo">
+  <source src="https://bloxdeck.github.io/movies/deck_startup.webm" type="video/mp4">
+</video> 
+	<script>
+		  function intro()
+{
+ document.getElementById("myVideo").hidden = false;
+  document.getElementById("but").hidden = true;
+  document.getElementById("myVideo").play();
+}
+
+let aud = document.getElementById("myVideo");
+aud.onended = function() {
+document.getElementById("navbar").hidden = false;
+	 document.getElementById("myVideo").hidden = true;
+	 document.getElementById("main").hidden = false;
+};
+	</script>
+  <div class="navbar" id="navbar" hidden>
+    <span id="extra" style="order: 99999;"></span>
+    <a href="javascript:openapp('home','');" class="iconbtn">
+      <span class="material-symbols-outlined" style="vertical-align: middle; background-color: rgba(0, 0, 0, 0);color: black; font-size: 24px; width: 4px; text-indent: -4px;">
+      home
+      </span>
+    </a>
+    <a href="javascript:openapp('settings','if youre reading this youre gay');" class="iconbtn">
+      <span class="material-symbols-outlined" style="vertical-align: middle; background-color: rgba(0, 0, 0, 0);color: black; font-size: 24px; width: 4px; text-indent: -4px;">
+        settings
+      </span>
+    </a>
+    <a href="javascript:openapp('games','mongus');" class="iconbtn">
+      <span class="material-symbols-outlined" style="vertical-align: middle; background-color: rgba(0, 0, 0, 0);color: black; font-size: 24px; width: 4px; text-indent: -4px;">
+        stadia_controller
+      </span>
+    </a>
+    
+  </div>
+
+  <div class="main" id="main" hidden>
+    <div id="home" class="app">
+      <span class="confont">
+        <b>WELCOME TO Brew OS Pro</b>
+        <br>
+features will be removed because its a full screen recommended experence
+        <br><br>
+        If you want to learn how to get your own app working, its coming soon<br
+        <br><br>
+       <br>
+   
+      </span>
+    </div>
+    <iframe style="display: none;" class="app" id="notepad" src="about:blank"></iframe>
+    <iframe style="display: none;" class="app" id="discord" src="about:blank"></iframe>
+    <iframe style="display: none;" class="app" id="muenster" src="about:blank"></iframe>
+    <iframe style="display: none;" class="app" id="twitter" src="about:blank"></iframe>
+    <iframe style="display: none;" class="app" id="game" src="about:blank"></iframe>
+    <embed style="display: none;" class="app" id="flashgame" src="about:blank">
+    <iframe style="display: none;" class="app" id="appstore" src="about:blank"></iframe>
+
+    <div style="display: none;" id="classicappstore">
+      <div class="confont" style="display:inline;width:50%;float:left;">
+        <b>APP STORE</b><br><br>
+        <b>APP STORE CANT BE ACCESSED ON BIG PICTURE MODE</b>
+
+      </div>
+      <div class="confont" style="display:inline;width:50%;float:left;">
+        <b>THEME'S</b><br><br>
+   themes are disabled due to them causing the big picture mode to break<br>
+        <br>
+        <br>
+        <b style="color: white;">MonoSpace-Cant be installed<</b> - <a class="consolea" href="#">[DISABLED]</a><br>
+        <b style="color: blue;">Windows Knockoff-Cant be installed</b> - <a class="consolea" href="#">[DISABLED]</a><br>
+        <b style="color: purple;">Soft Purple - Approved and can be worked with big photo mode</b> - <a class="consolea" href="javascript:addTheme('https://l413.github.io/Clockwork-OS-Custom/softpurpletheme.css');">[INSTALL]</a><br>
+        <br>
+        <br>
+
+        <a class="consolea" href="javascript:addTheme('clockstyle.css');">[RESET TO DEFAULT]</a><br>
+      </div>
+    </div>
+
+
+    <div style="display: none;" class="app" id="games">
+      <span class="confont">
+        <b>GAMES MENU - some games may be broken, be patient and wait for more</b><br><br>
+	      <a class="consolea" href="javascript:openapp('game','https://scratch.mit.edu/projects/784338979/embed');">GTA5</a><br>
+	       <a class="consolea" href="javascript:openapp('game','https://doom.yvesgurcan.com/index.html');">DOOM PORT</a><br>
+         <a class="consolea" href="javascript:openapp('game','https://sevenworksdev.github.io/SM64-JS/start.html');">Super Mario 64</a><br>
+           <a class="consolea" href="javascript:openapp('game','https://scratch.mit.edu/projects/105500895/embed');">Geometry Dash</a><br>
+        <a class="consolea" href="javascript:openapp('game','https://freearithmetichelp.gq/index.html');">Slope</a><br>
+         <a class="consolea" href="javascript:openapp('game','https://smdgames.github.io/mathgames66/7462e5fd-cbf3-4484-91ad-ad8574157409/content/w8.snokido.com/games/unity-webgl/cluster-rush/index.html');">Cluster Rush</a><br>
+        <a class="consolea" href="javascript:openapp('game','https://antarttycoon.github.io/more/idle-breakout/index.html');">Idle Breakout</a><br>
+        <a class="consolea" href="javascript:openapp('game','https://yexex-9h6r.onrender.com/retro-bowl/apple.html');">Retro Bowl</a><br>
+        <a class="consolea" href="javascript:openapp('game','https://yexex-9h6r.onrender.com/fnf/index.html');">Friday Night Funkin'</a><br>
+        <a class="consolea" href="javascript:openapp('game','https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://218463058-163927403382736103.preview.editmysite.com/uploads/b/139890129-297434511671085883/files/mm.xml');">Monkey Mart'</a><br>
+      </span>
+    </div>
+
+    <div style="display: none;" class="app" id="settings-apps">
+      <span class="confont">
+        <b>MANAGE APPS - <a class="consolea" href="javascript:openapp('settings','');">BACK</a></b><br>
+        <span class="confont" id="applist"></span>
+      </span>
+    </div>
+    
+    <div style="display: none;" class="app" id="settings">
+      <span class="confont">
+        <b>SETTINGS</b><br>
+        <a class="consolea" href="javascript:openapp('settings-apps','');">Manage Apps</a><br>
+        <a class="consolea" href="javascript:openapp('classicappstore','mongus');">App Store</a><br>
+        <a class="consolea" href="javascript:openapp('settings-about','');">About LHBOS</a><br>
+        <a class="consolea" href="javascript:factoryReset();">Factory Reset</a><br>
+      </span>
+    </div>
+    <div style="display: none;" class="app" id="settings-security">
+     <span class="confont">
+        <b>Privacy/Security/Passcode - <a class="consolea" href="javascript:openapp('settings','');">BACK</a></b></span><br>        
+    <button type="button" id="demo">Set Password</button>
+      <p>Cookie Sharing-Disabled (Cookie Sharing Is Not Used)</p>  
+    </div>
+    <div style="display: none;" class="app" id="settings-about">
+      <span class="confont">
+        <b>ABOUT LHBOS - <a class="consolea" href="javascript:openapp('settings','');">BACK</a></b></span><br>        
+        Firmware Version 5.7.8 | Brew OS 17 Major Update: Added Aton<br><br>
+	    <button class="myButton"onclick="window.location.reload();">Check For Updates</button>
+
+<style>
+.myButton {
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+    </style> 
+      <a class="consolea" href="javascript:openapp('settings-debug','');">Developer Options - only for people who know how to use it</a><br>
+      
+    </div>
+        <div style="display: none;" class="app" id="settings-battery">
+      <span class="confont">
+        <b>Battery - <a class="consolea" href="javascript:openapp('settings','');">BACK</a></b></span><br>        
+        This Is For People Who want to access the battery quickly<br><br>
+ 
+
+<div class="battery-manager">
+  <div class="info">
+    <div class="battery-charging">
+      Is battery charging? <span class="value">...</span>
+    </div>
+    <div class="battery-level">
+      Battery level? <span class="value">...</span>
+    </div>
+    <div class="battery-remaining">
+      Battery remaining time? <span class="value">...</span>
+    </div>
+  </div>
+
+  <div class="battery">
+    <div class="level"></div>
+    <div class="bolt--border"></div>
+    <div class="bolt"></div>
+  </div>
+</div>
+
+<p>Browser support: <a href="http://caniuse.com/#feat=battery-status" target="_blank">http://caniuse.com/#feat=battery-status</a></p>
+
+      <style>
+        $batteryWidth: 156px;
+$batteryHeight: 72px;
+$batteryBorderSize: 2px;
+$batteryStrokeColor: #000;
+$batteryBorderRadius: 2px;
+$batteryNubSize: $batteryHeight * 0.5;
+
+.battery-manager {
+  padding: 0 20px;
+
+  > .info { margin-bottom: 15px; }
+  margin-bottom: 30px;
+}
+
+.battery {
+  position: relative;
+  width: $batteryWidth;
+  height: $batteryHeight;
+  border: $batteryBorderSize solid $batteryStrokeColor;
+  border-radius: $batteryBorderRadius;
+  position: relative;
+  padding: $batteryBorderSize + 1;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -1 * (($batteryNubSize*0.35) + $batteryBorderSize + 2);
+    margin-top:-1 * ($batteryNubSize/2);
+    width: $batteryNubSize;
+    height: $batteryNubSize;
+    background: $batteryStrokeColor;
+    clip: rect(0, $batteryNubSize, $batteryNubSize, ($batteryNubSize*0.65));
+    border-radius: 50%;
+  }
+
+  > .level {
+    width: 0%;
+    height: 100%;
+    background: $batteryStrokeColor;
+    border-radius: $batteryBorderRadius/2;
+  }
+  @for $i from 0 through 20 {
+    > .level--#{$i * 5} {
+      width: 5% * $i;
+    }
+  }
+
+  > .bolt {
+    display: none;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-bottom: 24px solid $batteryStrokeColor;
+    position: absolute;
+    transform: rotateZ(27deg);
+    top: calc(50% - 24px);
+    left: calc(50% - 2px);
+
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-top: 24px solid $batteryStrokeColor;
+      position: absolute;
+      margin-top: 18px;
+    }
+  }
+
+  > .bolt--border {
+    @extend .bolt;
+    display: none;
+    border: 9px solid transparent;
+    border-bottom: 28px solid #fff;
+    left: calc(50% - 5px);
+    top: calc(50% - 29px);
+
+    &:after {
+      border: 9px solid transparent;
+      border-top: 28px solid #fff;
+      margin-top: 18px;
+      left: -5px;
+    }
+  }
+
+  &--is-plugged {
+    .bolt,
+    .bolt--border { display: block; }
+  }
+}
+
+      </style>
+          <script>
+            const $batteryInfo = document.querySelector('.battery-manager .info');
+const $charging = $batteryInfo.querySelector('.battery-charging');
+const $level = $batteryInfo.querySelector('.battery-level');
+const $remaining = $batteryInfo.querySelector('.battery-remaining');
+
+const $battery = document.querySelector('.battery-manager .battery');
+const $batteryLevel = $battery.querySelector('.level');
+
+navigator.getBattery()
+  .then(function(battery) {
+    (function init() {
+      updateChargeInfo();
+      updateLevelInfo();
+      updateDischargingInfo();
+
+      battery.addEventListener('chargingchange', updateChargeInfo);
+      battery.addEventListener('levelchange', updateLevelInfo);
+      battery.addEventListener('dischargingtimechange', updateDischargingInfo);
+    }());
+
+    function updateChargeInfo() {
+      let $value = $charging.querySelector('.value');
+      $value.innerHTML = (battery.charging ? 'Yes' : 'No');
+      
+      $battery.classList.remove('battery--is-plugged');
+      if (battery.charging) {
+        $battery.classList.add('battery--is-plugged');
+      }
+    }
+    function updateLevelInfo() {
+      let $value = $level.querySelector('.value');
+      let perc = battery.level * 100;
+      $value.innerHTML = (perc.toFixed(2) + '%');
+
+      let percStep = perc - perc % 5;
+      $batteryLevel.classList.add('level--' + percStep);
+    }
+    function updateDischargingInfo() {
+      let $value = $remaining.querySelector('.value');
+      $value.innerHTML = ~~battery.dischargingTime > 0 ? moment.duration(battery.dischargingTime, 'seconds')
+                               .format('h[h] m[m]') : '--';
+    }
+  }
+);
+
+          </script>
+    </div>
+    <div style="display: none;" class="app" id="settings-debug">
+      <span class="confont">
+          <script src="js/Notification.js"></script>
+        <b>DEBUG INFORMATION - <a class="consolea" href="javascript:openapp('settings','');">BACK</a></b></span><br>        
+ <button onclick="Notify("Current Firmware:BrewOS 2.1 & BrewOS 5 ")">Current Firmware</button>
+        This is debug info for LHBOS developers to use when troubleshooting. Most other people won't get much use out of this.<br><br>
+               <a class="consolea" href="javascript:addTheme(null);">[INSTALL CUSTOM THEME]</a><br>
+              <a class="consolea" href="javascript:installApp(null);">[INSTALL CUSTOM SCRIPT]</a><br>
+      
+    </div>
+  </div>
+  
+  <script src="js/LHBOS.js"></script>
+
+</body></html>
